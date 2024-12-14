@@ -1,11 +1,24 @@
-<form>
+<!-- ngSubmit é uma diretiva (O evento (ngSubmit) é acionado quando o formulário é enviado, seja por um botão com type="submit" ou pressionando Enter em um campo.) e submit a função -->
+<!-- formGroup [formGroup]="momentForm":
+
+Esse é um binding para um formulário reativo usando Angular's Reactive Forms.
+O atributo formGroup associa o formulário ao grupo de controles definido no componente.
+momentForm é uma variável no componente que provavelmente é uma instância de FormGroup, criada usando a API FormBuilder ou manualmente. -->
+<!-- #formDir é uma variavel e o ngForm é uma diretiva -->
+<form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
   <div class="form-group">
     <label for="title">Título:</label>
-    <input type="text" placeholder="Coloque um título" required>
+    <input type="text" placeholder="Coloque um título" formControlName="title" required>
+    <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
+      <p>O título é obrigatório</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="description">Descrição:</label>
-    <textarea placeholder="O que aconrteceu lá?" required></textarea>
+    <textarea placeholder="O que aconteceu lá?" formControlName="description" required></textarea>
+    <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
+      <p>A descrição é obrigatório</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="image">Coloque a foto que mais marcou:</label>
