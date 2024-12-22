@@ -4,6 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Moments } from './../../../Moments';
 import { MomentService } from '../../../services/moment.service';
 import { environment } from '../../../../environments/environment';
+import {formatDate} from '@angular/common'
 
 @Component({
   selector: 'app-home',
@@ -24,10 +25,14 @@ export class HomeComponent implements OnInit {
       const data = items.data;
 
       data.map((item) => {
-        item.created_at = new Date(item.created_at!).toLocaleDateString(
-          'pt-BR'
-        );
-      });
+        item.created_at = formatDate(
+  new Date(item.created_at!.split('/').reverse().join('-')),
+  'dd/MM/yyyy',
+  'pt-BR'
+          );
+        });
+
+      console.log(data)
 
       this.allMoments = data;
       this.moments = data;

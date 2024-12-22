@@ -13,7 +13,11 @@ import { NewMomentComponent } from './components/page/new-moment/new-moment.comp
 import { MomentFormComponent } from './components/moment-form/moment-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+// Importar a localidade brasileira
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+// Registrar a localidade brasileira
+registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
