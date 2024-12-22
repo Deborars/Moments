@@ -29,13 +29,10 @@ export class NewMomentComponent {
 
     // todo
 
-    // enviar para o service
-    await this.momentService.createMoments(formData).subscribe();
+    await this.momentService.createMoment(formData).subscribe();
 
-    // exibir msg
-    this.messageService.add('Momento adicionado com sucesso!');
+    this.messageService.add(`Momento adicionado com sucesso!`);
 
-    // redirect
     this.router.navigate(['/']);
   }
 }
