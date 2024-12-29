@@ -16,12 +16,14 @@ export class HomeComponent implements OnInit {
   moments: Moments[] = []; //array que trará os momentos filtrados
   baseApiUrl = environment.baseApiUrl;
 
+  faSearch = faSearch;
+  searchTerm : string = '';
+
   // todo search
   constructor(private momentService: MomentService){}
 
   ngOnInit(): void {
     this.momentService.getMoments().subscribe((items) => {
-      console.log('Requisição feita:', items);
       const data = items.data;
 
       data.map((item) => {
@@ -32,10 +34,15 @@ export class HomeComponent implements OnInit {
           );
         });
 
-      console.log(data)
-
       this.allMoments = data;
       this.moments = data;
     });
+  }
+  
+  search(e: Event):void {
+    const target = e.target as HTMLInputElement;
+    const value = target.value.toLowerCase();
+
+    this.moments = this.allMoments.filter(moment => moment.title.toLocaleLowerCase().includes(value))
   }
 }
