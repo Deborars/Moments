@@ -17,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { MomentComponent } from './components/page/moment/moment.component';
+import { EditMomentComponent } from './components/edit-moment/edit-moment.component';
 // Registrar a localidade brasileira
 registerLocaleData(localePt);
 @NgModule({
@@ -29,7 +30,8 @@ registerLocaleData(localePt);
     NewMomentComponent,
     MomentFormComponent,
     MessagesComponent,
-    MomentComponent
+    MomentComponent,
+    EditMomentComponent
   ],
   imports: [
     BrowserModule,
