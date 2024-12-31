@@ -6,6 +6,7 @@ O atributo formGroup associa o formulário ao grupo de controles definido no com
 momentForm é uma variável no componente que provavelmente é uma instância de FormGroup, criada usando a API FormBuilder ou manualmente. -->
 <!-- #formDir é uma variavel e o ngForm é uma diretiva -->
 <form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+  <input type="hidden" formControlName="id">
   <div class="form-group">
     <label for="title">Título:</label>
     <input type="text" placeholder="Coloque um título" formControlName="title" required>
