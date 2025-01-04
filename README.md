@@ -1,6 +1,6 @@
 # Moments
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+Eeste projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 18.2.9.
 
 # Projeto Momentos em Angular
 
@@ -12,6 +12,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![alt text](image-1.png)
 
-### Editar e Add coomentário
+### Editar e Add comentário
 
 ![alt text](image-2.png)
